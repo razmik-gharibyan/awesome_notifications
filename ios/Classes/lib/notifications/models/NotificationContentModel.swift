@@ -159,12 +159,12 @@ public class NotificationContentModel : AbstractModel {
                 msg: "channelKey cannot be null or empty")
         }
 
-        if(!StringUtils.isNullOrEmpty(mediaPath: icon)){
+        if(!StringUtils.isNullOrEmpty(icon)){
             if(
                 BitmapUtils.getMediaSourceType(mediaPath:icon) != MediaSource.Resource
             ){
                 throw PushNotificationError.invalidRequiredFields(
-                    msg: "Small icon ("+\(icon ?? "[invalid icon]")+") must be a valid media native resource type.")
+                    msg: "Small icon ("+icon!+") must be a valid media native resource type.")
             }
         }
         
